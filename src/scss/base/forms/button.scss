@@ -2,13 +2,87 @@
 // Снипет (HTML): btn
 
 .button {
-	display: inline-flex;
-	padding: 0px 0px;
-	@media (any-hover: hover) {
-		&:hover {
-		}
-	}
-	&._fw {
-		width: 100%;
-	}
+    display: inline-flex;
+    padding: 0px 0px;
+    @media (any-hover: hover) {
+        &:hover {
+        }
+    }
+    &._fw {
+        width: 100%;
+    }
+}
+
+//<BUTTONS (a.btn+tab)>====================================================================================================
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    padding: 0px 40px;
+    height: 70px;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 22 / 17 * 100%;
+    letter-spacing: -0.4px;
+    border-radius: 0px 18px 0px 0px;
+    transition: all 0.5s ease 0s;
+    color: #000;
+    background-color: #ffac12;
+    @media (max-width: $md2+px) {
+        padding: 0px 20px;
+    }
+    &::before {
+        color: #fff;
+        transition: all 0.5s ease 0s;
+        font-size: 10px;
+        margin: 0px 0px 0px 20px;
+    }
+    &_yellow {
+        @media (min-width: $md2+px) {
+            &:hover {
+                background-color: #fff;
+                &::before {
+                    color: #ffac12;
+                }
+            }
+        }
+    }
+
+    &_black {
+        color: #fff;
+        background-color: #000;
+        &::before {
+            color: #ffac12;
+        }
+        @media (min-width: 992px) {
+            &:hover {
+                color: #000;
+                background-color: #ffac12;
+                &::before {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    &_menu {
+        color: #000;
+        height: 50px;
+        background-color: #ffac12;
+        &::before {
+            margin: 0px 0px 0px 10px;
+            color: #fff;
+        }
+        @media (min-width: $md2+px) {
+            &:hover {
+                background-color: #fff;
+                &::before {
+                    color: #ffac12;
+                }
+            }
+        }
+    }
+    &._fw {
+        width: 100%;
+    }
 }

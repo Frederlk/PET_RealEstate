@@ -1,1 +1,40 @@
-// Заголовки, общие БЄМ блоки и проче...
+.line {
+    height: 4px;
+    width: 170px;
+    background: rgb(255, 172, 18);
+    background: linear-gradient(90deg, rgba(255, 172, 18, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    @media (max-width: $md4+px) {
+        width: 100%;
+    }
+}
+.title {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 65 / 50 * 100%;
+    letter-spacing: -1.25px;
+    color: #000000;
+    @media (max-width: $md2+px) {
+        font-size: 40px;
+    }
+    &_w {
+        color: #fff;
+    }
+}
+.text {
+    font-size: 20px;
+    line-height: 28 / 20 * 100%;
+    letter-spacing: -0.5px;
+    color: #000000;
+    opacity: 0.6;
+    &_w {
+        color: #fff;
+    }
+}
+.subtitle {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    line-height: 26 / 20 * 100%;
+    letter-spacing: -0.5px;
+    color: #000000;
+}

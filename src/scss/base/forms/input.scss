@@ -28,3 +28,38 @@ textarea.input {
     resize: none;
     padding: 0px 0px;
 }
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.input {
+    width: 100%;
+    display: block;
+    padding: 0 20px;
+    height: 60px;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    background-color: #fff;
+    font-size: 15px;
+    letter-spacing: -0.4px;
+    color: #000000;
+    margin: 0px 0px 10px 0px;
+
+    &._focus {
+        border: 1px solid #ffac12;
+    }
+    &._error {
+        border: 1px solid red;
+        color: red;
+    }
+}
+textarea.input {
+    height: 100px;
+    resize: none;
+    padding: 20px;
+}
