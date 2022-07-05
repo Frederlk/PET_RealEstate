@@ -1,88 +1,70 @@
-//<BUTTONS (a.btn+tab)>
-// Снипет (HTML): btn
-
-.button {
-    display: inline-flex;
-    padding: 0px 0px;
-    @media (any-hover: hover) {
-        &:hover {
-        }
-    }
-    &._fw {
-        width: 100%;
-    }
-}
-
-//<BUTTONS (a.btn+tab)>====================================================================================================
 .btn {
     display: inline-flex;
     justify-content: center;
     align-items: center;
     flex-direction: row-reverse;
-    padding: 0px 40px;
-    height: 70px;
-    font-size: 17px;
+    padding: 0px rem(40);
+    height: rem(70);
+    font-size: rem(17);
+    line-height: math.div(22, 17);
     font-weight: 700;
-    line-height: 22 / 17 * 100%;
     letter-spacing: -0.4px;
-    border-radius: 0px 18px 0px 0px;
+    color: $black;
+    background-color: $primary;
+    border-radius: 0px rem(18) 0px 0px;
     transition: all 0.5s ease 0s;
-    color: #000;
-    background-color: #ffac12;
-    @media (max-width: $md2+px) {
-        padding: 0px 20px;
+    @media (max-width: $tablet) {
+        padding: 0px rem(20);
     }
     &::before {
-        color: #fff;
+        color: $white;
         transition: all 0.5s ease 0s;
-        font-size: 10px;
-        margin: 0px 0px 0px 20px;
+        font-size: rem(10);
+        margin-left: rem(20);
     }
     &_yellow {
-        @media (min-width: $md2+px) {
+        @media (any-hover: hover) {
             &:hover {
-                background-color: #fff;
+                background-color: $white;
                 &::before {
-                    color: #ffac12;
+                    color: $primary;
                 }
             }
         }
     }
 
     &_black {
-        color: #fff;
-        background-color: #000;
+        color: $white;
+        background-color: $black;
         &::before {
-            color: #ffac12;
+            color: $primary;
         }
-        @media (min-width: 992px) {
+        @media (any-hover: hover) {
             &:hover {
-                color: #000;
-                background-color: #ffac12;
+                color: $black;
+                background-color: $primary;
                 &::before {
-                    color: #fff;
+                    color: $white;
                 }
             }
         }
     }
     &_menu {
-        color: #000;
-        height: 50px;
-        background-color: #ffac12;
+        color: $black;
+        height: rem(50);
+        background-color: $primary;
         &::before {
             margin: 0px 0px 0px 10px;
-            color: #fff;
+            margin-left: rem(10);
+            color: $white;
         }
-        @media (min-width: $md2+px) {
+        @media (any-hover: hover) {
             &:hover {
-                background-color: #fff;
+                background-color: $white;
                 &::before {
-                    color: #ffac12;
+                    color: $primary;
                 }
             }
         }
-    }
-    &._fw {
-        width: 100%;
     }
 }
