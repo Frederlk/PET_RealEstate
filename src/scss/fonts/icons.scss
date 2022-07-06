@@ -8,13 +8,15 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-[class*="_icon-"] {
-    &:before {
+
+[class^="_icon-"],
+[class*=" _icon-"] {
+    &:before,
+    &::after {
         @extend %ic;
         display: block;
     }
 }
-
 ._icon-path:before {
     content: "\e905";
     color: #ffac12;

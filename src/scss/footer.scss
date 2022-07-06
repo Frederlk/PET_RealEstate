@@ -1,21 +1,16 @@
 .footer {
-    background: #000;
-    &__content {
+    background-color: $black;
+    &__container {
     }
 
     &__top {
-        padding: 80px 0px 50px 0px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        @include adaptiveValue("padding-top", 80, 40, 1070, 991.98, 1);
+        @include adaptiveValue("padding-bottom", 50, 30, 1070, 991.98, 1);
+        border-bottom: rem(1) solid rgba(255, 255, 255, 0.1);
         display: flex;
         align-items: center;
         justify-content: space-between;
-        @media (max-width: $md1+px) {
-            padding: 60px 0px 40px 0px;
-        }
-        @media (max-width: $md2+px) {
-            padding: 40px 0px 30px 0px;
-        }
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             display: block;
             text-align: center;
         }
@@ -23,20 +18,18 @@
 
     &__title {
         font-weight: bold;
-        font-size: 42px;
-        line-height: 55px;
-        line-height: 55 / 42 * 100%;
-        letter-spacing: -1px;
-        color: #ffffff;
-        @media (max-width: $md3+px) {
-            margin: 0px 0px 20px 0px;
+        font-size: rem(42);
+        line-height: math.div(55, 42);
+        letter-spacing: rem(-1);
+        color: $white;
+        @media (max-width: $mobile) {
+            margin-bottom: rem(20);
         }
         span {
-            margin: 0px 0px 0px 14px;
-            background: linear-gradient(45deg, #ffac12, #c87224);
+            margin-left: rem(14);
+            background: linear-gradient(45deg, $primary, #c87224);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            color: #0b2349;
         }
     }
 
@@ -44,34 +37,30 @@
     }
 
     &__bottom {
-        padding: 60px 0px 120px 0px;
+        @include adaptiveValue("padding-top", 60, 30, 1070, 991.98, 1);
+        @include adaptiveValue("padding-bottom", 120, 30, 1070, 767.98, 1);
         display: flex;
         justify-content: space-between;
-        @media (max-width: $md1+px) {
-            padding: 40px 0px 80px 0px;
-        }
-        @media (max-width: $md2+px) {
-            padding: 30px 0px 60px 0px;
-        }
-        @media (max-width: $md3+px) {
-            padding: 30px 0px;
+        @media (max-width: $mobileSmall) {
+            flex-direction: column;
+            gap: rem(40);
         }
     }
 
     &__info {
         flex: 1 1 auto;
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             flex: 0 1 50%;
             text-align: center;
         }
     }
 
     &__logo {
+        display: inline-block;
+        @include adaptiveValue("margin-bottom", 30, 15, 767.98, 479.98, 1);
         img {
             max-width: 100%;
         }
-        display: inline-block;
-        margin: 0px 0px 30px 0px;
     }
 
     &__socials {
@@ -82,90 +71,98 @@
 }
 .socials-footer {
     display: flex;
+    gap: rem(40);
     align-items: center;
-    @media (max-width: $md3+px) {
+    @media (max-width: $mobile) {
         justify-content: center;
     }
     &__item {
-        margin: 0px 40px 0px 0px;
-        font-size: 18px;
-        &:last-child {
-            margin: 0px 0px 0px 0px;
-        }
-        @media (min-width: $md2+px) {
+        font-size: rem(18);
+        @media (any-hover: hover) {
             &:hover {
                 &::before {
-                    transition: all 0.3s ease 0s;
-                    color: #ffac12;
+                    transition: color 0.3s ease 0s;
+                    color: $primary;
                 }
             }
         }
     }
 }
 .links-footer {
-    margin: 0px -80px;
+    @include adaptiveValue("margin-left", -80, -40, 1070, 991.98, 1);
+    @include adaptiveValue("margin-right", -80, -40, 1070, 991.98, 1);
     display: flex;
-    @media (max-width: $md2+px) {
-        margin: 0px -40px;
+    @media (max-width: $tablet) {
+        margin: 0px rem(-40);
     }
-    @media (max-width: $md3+px) {
+    @media (max-width: $mobile) {
         flex: 0 1 50%;
         flex-wrap: wrap;
         margin: 0;
     }
+
     &__column {
-        padding: 0px 80px;
+        @include adaptiveValue("padding-left", 80, 40, 1070, 991.98, 1);
+        @include adaptiveValue("padding-right", 80, 40, 1070, 991.98, 1);
         flex: 0 1 33.333%;
-        margin: 0px 0px 30px 0px;
-        @media (max-width: $md2+px) {
-            padding: 0px 40px;
-        }
-        @media (max-width: $md3+px) {
+        @include adaptiveValue("margin-bottom", 30, 10, 1070, 767.98, 1);
+        @media (max-width: $mobile) {
             flex: 1 1 100%;
             padding: 0;
             text-align: center;
-            margin: 0px 0px 10px 0px;
-        }
-        &._active {
-            .links-footer__list {
-                display: block;
-            }
-            .links-footer__label {
-                color: #ffac12;
-            }
         }
     }
 
     &__list {
         li {
-            font-size: 15px;
-            line-height: 20 / 15 * 100%;
-            letter-spacing: -0.4px;
-            margin: 0px 0px 10px 0px;
-        }
-        @media (max-width: $md3+px) {
-            display: none;
+            line-height: math.div(20, 15);
+            letter-spacing: rem(-0.4);
+            margin-bottom: rem(10);
         }
     }
 
     &__label {
-        font-size: 15px;
-        line-height: 20 / 15 * 100%;
-        letter-spacing: -0.4px;
-        margin: 0px 0px 10px 0px;
-        font-weight: bold;
-        color: #ffffff;
+        line-height: math.div(20, 15);
+        letter-spacing: rem(-0.4);
+        margin-bottom: rem(10);
+        font-weight: 700;
+        color: $white;
+        transition: color 0.5s ease 0s;
+        @media (max-width: $mobile) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        &::after {
+            @media (min-width: $mobile) {
+                display: none;
+            }
+            transition: transform 0.5s ease 0s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: rem(8);
+            margin-left: rem(15);
+        }
+        &._spoller-active {
+            color: $primary;
+            &::after {
+                transform: rotate(-180deg);
+            }
+        }
+        @media (min-width: $mobile) {
+            cursor: text;
+        }
     }
 
     &__link {
-        color: #979797;
-        transition: all 0.3s ease 0s;
-        @media (min-width: $md2+px) {
+        color: $gray_02;
+        transition: color 0.3s ease 0s;
+        @media (any-hover: hover) {
             &:hover {
-                color: #ffac12;
+                color: $primary;
             }
         }
     }
 }
-
-//====================================================================================================

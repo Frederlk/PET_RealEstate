@@ -1,35 +1,21 @@
 // Подключение функционала "Чертогов Фрилансера"
 import { isMobile } from "./functions.js";
 // Подключение списка активных модулей
-import { flsModules } from "./modules.js";
 
 if (isMobile.any()) {
     let filterLive = document.querySelectorAll(".filter-live__category");
-    for (let index = 0; index < filterLive.length; index++) {
-        const menuParent = filterLive[index];
-        menuParent.addEventListener("click", function (e) {
-            menuParent.parentElement.classList.toggle("_active");
+    filterLive.forEach((item) => {
+        item.addEventListener("click", function (e) {
             e.preventDefault();
+            item.parentElement.classList.toggle("_active");
         });
-    }
-}
-
-let feedbackColumn = document.querySelectorAll(".feedback__item");
-for (let index = 0; index < feedbackColumn.length; index++) {
-    const feedbackItem = feedbackColumn[index];
-    feedbackItem.addEventListener("click", function (e) {
-        feedbackItem.parentElement.classList.toggle("_active");
-        e.preventDefault();
     });
 }
 
-if (isMobile.any()) {
-    let footerLabel = document.querySelectorAll(".links-footer__label");
-    for (let index = 0; index < footerLabel.length; index++) {
-        const footerList = footerLabel[index];
-        footerList.addEventListener("click", function (e) {
-            footerList.parentElement.classList.toggle("_active");
-            e.preventDefault();
-        });
-    }
-}
+let feedbackColumn = document.querySelectorAll(".feedback__item");
+feedbackColumn.forEach((item) => {
+    item.addEventListener("click", function (e) {
+        item.parentElement.classList.toggle("_active");
+        e.preventDefault();
+    });
+});

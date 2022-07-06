@@ -1,7 +1,5 @@
-//====================================================================================================
-//====================================================================================================
 .header {
-    height: 50px;
+    height: rem(50);
     position: relative;
     z-index: 100;
     display: flex;
@@ -33,9 +31,10 @@
     }
 
     &__body {
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             transform: translate(-100%, 0px);
-            padding: 100px 0px 0px 0px;
+            padding-top: rem(100);
+            padding-bottom: rem(30);
             transition: all 0.3s ease 0s;
             position: fixed;
             top: 0;
@@ -44,7 +43,7 @@
             height: 100%;
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.9);
-            &._active {
+            .menu-open & {
                 transform: translate(0px, 0px);
             }
         }
@@ -53,129 +52,71 @@
     &__list {
         display: flex;
         align-items: center;
-        li {
-            margin: 0px 60px 0px 0px;
-            @media (max-width: $md2+px) {
-                margin: 0px 30px 0px 0px;
-            }
-            @media (max-width: $md3+px) {
-                margin: 0px 0px 20px 0px;
-            }
-        }
-        @media (max-width: $md3+px) {
-            display: block;
+        @include adaptiveValue("gap", 60, 20, 1070, 767.98, 1);
+        @media (max-width: $mobile) {
+            flex-direction: column;
             text-align: center;
         }
     }
 
     &__link {
         font-weight: 700;
-        line-height: 20 / 15 * 100%;
-        letter-spacing: -0.4px;
+        line-height: math.div(20, 15);
+        letter-spacing: rem(-0.4);
         transition: all 0.5s ease 0s;
-        color: #ffffff;
-        @media (min-width: $md2+px) {
+        color: $white;
+        @media (any-hover: hover) {
             &:hover {
-                color: #ffac12;
+                color: $primary;
             }
         }
-        @media (max-width: $md3+px) {
-            font-size: 20px;
+        @media (max-width: $mobile) {
+            font-size: rem(20);
         }
     }
 }
+
 .icon-menu {
     display: none;
-    @media (max-width: $md3+px) {
+    @media (max-width: $mobile) {
         display: block;
         position: relative;
-        top: 0;
-        right: 0px;
-        width: 30px;
-        height: 25px;
+        width: rem(30);
+        height: rem(25);
         cursor: pointer;
-        z-index: 25;
-        span {
+        z-index: 5;
+        span,
+        &::before,
+        &::after {
+            content: "";
             transition: all 0.3s ease 0s;
-            top: calc(50% - 2px);
-            left: 0px;
+            right: 0;
             position: absolute;
             width: 100%;
-            height: 4px;
-            background-color: #fff;
-            &:first-child {
-                top: 0px;
-            }
-            &:last-child {
-                top: auto;
-                bottom: 0px;
-            }
+            height: rem(4);
+            background-color: $white;
         }
-        &._active {
+        &::before {
+            top: 0;
+        }
+        &::after {
+            bottom: 0;
+        }
+        span {
+            top: calc(50% - rem(1));
+        }
+        .menu-open & {
             span {
-                transform: scale(0);
-                &:first-child {
-                    transform: rotate(-45deg);
-                    top: calc(50% - 2px);
-                }
-                &:last-child {
-                    transform: rotate(45deg);
-                    bottom: calc(50% - 2px);
-                }
+                width: 0;
+            }
+            &::before {
+                top: calc(50% - rem(2));
+                transform: rotate(-45deg);
+            }
+            &::after {
+                bottom: calc(50% - rem(2));
+                transform: rotate(45deg);
             }
         }
     }
 }
-
-//====================================================================================================
-
-//Burger
-/*
-.icon-menu {
-	display: none;
-	@media (max-width: $mobile) {
-		display: block;
-		position: relative;
-		width: rem(30);
-		height: rem(18);
-		cursor: pointer;
-		z-index: 5;
-		span,
-		&::before,
-		&::after {
-			content: "";
-			transition: all 0.3s ease 0s;
-			right: 0;
-			position: absolute;
-			width: 100%;
-			height: rem(2);
-			background-color: #000;
-		}
-		&::before {
-			top: 0;
-		}
-		&::after {
-			bottom: 0;
-		}
-		span {
-			top: calc(50% - rem(1));
-		}
-		.menu-open & {
-			span {
-				width: 0;
-			}
-			&::before,
-			&::after {
-			}
-			&::before {
-				top: calc(50% - rem(1));
-				transform: rotate(-45deg);
-			}
-			&::after {
-				bottom: calc(50% - rem(1));
-				transform: rotate(45deg);
-			}
-		}
-	}
-}
-*/

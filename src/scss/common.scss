@@ -1,40 +1,36 @@
 .line {
-    height: 4px;
-    width: 170px;
-    background: rgb(255, 172, 18);
+    height: rem(4);
+    width: rem(170);
     background: linear-gradient(90deg, rgba(255, 172, 18, 1) 0%, rgba(0, 0, 0, 1) 100%);
-    @media (max-width: $md4+px) {
+    @media (max-width: $mobileSmall) {
         width: 100%;
     }
 }
 .title {
     font-weight: 700;
-    font-size: 50px;
-    line-height: 65 / 50 * 100%;
-    letter-spacing: -1.25px;
-    color: #000000;
-    @media (max-width: $md2+px) {
-        font-size: 40px;
-    }
+    font-size: rem(50);
+    line-height: math.div(65, 50);
+    letter-spacing: rem(-1.25);
+    color: $black;
+    @include adaptiveValue("font-size", 50, 40, 1070, 991.98, 1);
     &_w {
-        color: #fff;
+        color: $white;
     }
 }
 .text {
-    font-size: 20px;
-    line-height: 28 / 20 * 100%;
-    letter-spacing: -0.5px;
-    color: #000000;
+    font-size: rem(20);
+    line-height: math.div(28, 20);
+    letter-spacing: rem(-0.5);
+    color: $black;
     opacity: 0.6;
     &_w {
-        color: #fff;
+        color: $white;
     }
 }
 .subtitle {
     font-weight: 700;
-    font-size: 20px;
-    line-height: 26px;
-    line-height: 26 / 20 * 100%;
-    letter-spacing: -0.5px;
-    color: #000000;
+    font-size: rem(20);
+    line-height: math.div(26, 20);
+    letter-spacing: rem(-0.5);
+    color: $black;
 }

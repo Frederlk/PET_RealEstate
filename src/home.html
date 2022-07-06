@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 @@include('html/_head.htm',{
-"title":"Главная"
+"title":"Real Estate"
 })
 
 <body>
 	<div class="wrapper">
 		<main class="page">
 			<section class="fullscreen">
-				<div class="fullscreen__content _container">
+				<div class="fullscreen__container">
 					<div class="fullscreen__body">
-						@@include('_header.html',{})
+						@@include('html/_header.htm',{})
 						<div class="fullscreen__text">
 							<h1 class="fullscreen__title">Beautiful homes made for you</h1>
 							<div class="fullscreen__subtitle">In oculis quidem se esse admonere interesse enim maxime placeat,
@@ -24,13 +24,14 @@
 						</div>
 					</div>
 				</div>
-				<div class="fullscreen__bg _ibg">
-					<img src="img/bg.png" alt="">
+				<div class="fullscreen__bg-ibg">
+					<img src="@img/bg.png" alt="background">
 				</div>
 			</section>
+
 			<section class="hands">
 				<div class="hands__content">
-					<div class="hands__container _container">
+					<div class="hands__container">
 						<div class="hands__body">
 							<div class="hands__line line"></div>
 							<h2 class="hands__title title">You’re in good hands</h2>
@@ -44,14 +45,15 @@
 						</div>
 					</div>
 				</div>
-				<div data-da=".hands,767,first" class="hands__image _ibg">
-					<img src="img/content.png" alt="">
+				<div data-da=".hands,767.98,first" class="hands__image-ibg">
+					<img src="@img/content.png" alt="happy coustomers">
 				</div>
 			</section>
+
 			<section class="live">
-				<div class="live__container _container">
+				<div class="live__container">
 					<div class="live__line line"></div>
-					<div class="live__title title">Find your next place to live</div>
+					<h2 class="live__title title">Find your next place to live</h2>
 					<div class="live__filter filter-live">
 						<div class="filter-live__column">
 							<div class="filter-live__category _icon-arrow-down">Looking for</div>
@@ -88,9 +90,9 @@
 					</div>
 					<div class="live__items items-live">
 						<div class="items-live__column">
-							<div class="items-live__item">
+							<article class="items-live__item">
 								<a href="#" class="items-live__image">
-									<img src="img/content/01.png" alt="">
+									<img src="@img/content/01.png" alt="Malto House">
 								</a>
 								<div class="items-live__body">
 									<a href="#" class="items-live__title">Malto House</a>
@@ -102,12 +104,12 @@
 										<div class="items-live__feature _icon-size">2</div>
 									</div>
 								</div>
-							</div>
+							</article>
 						</div>
 						<div class="items-live__column">
-							<div class="items-live__item">
+							<article class="items-live__item">
 								<a href="#" class="items-live__image">
-									<img src="img/content/02.png" alt="">
+									<img src="@img/content/02.png" alt="Malto House">
 								</a>
 								<div class="items-live__body">
 									<a href="#" class="items-live__title">Malto House</a>
@@ -119,12 +121,12 @@
 										<div class="items-live__feature _icon-size">2</div>
 									</div>
 								</div>
-							</div>
+							</article>
 						</div>
 						<div class="items-live__column">
-							<div class="items-live__item">
+							<article class="items-live__item">
 								<a href="#" class="items-live__image">
-									<img src="img/content/03.png" alt="">
+									<img src="@img/content/03.png" alt="Malto House">
 								</a>
 								<div class="items-live__body">
 									<a href="#" class="items-live__title">Malto House</a>
@@ -136,12 +138,12 @@
 										<div class="items-live__feature _icon-size">2</div>
 									</div>
 								</div>
-							</div>
+							</article>
 						</div>
 						<div class="items-live__column">
-							<div class="items-live__item">
+							<article class="items-live__item">
 								<a href="#" class="items-live__image">
-									<img src="img/content/04.png" alt="">
+									<img src="@img/content/04.png" alt="Malto House">
 								</a>
 								<div class="items-live__body">
 									<a href="#" class="items-live__title">Malto House</a>
@@ -153,12 +155,12 @@
 										<div class="items-live__feature _icon-size">2</div>
 									</div>
 								</div>
-							</div>
+							</article>
 						</div>
 						<div class="items-live__column">
-							<div class="items-live__item">
+							<article class="items-live__item">
 								<a href="#" class="items-live__image">
-									<img src="img/content/05.png" alt="">
+									<img src="@img/content/05.png" alt="Malto House">
 								</a>
 								<div class="items-live__body">
 									<a href="#" class="items-live__title">Malto House</a>
@@ -170,12 +172,12 @@
 										<div class="items-live__feature _icon-size">2</div>
 									</div>
 								</div>
-							</div>
+							</article>
 						</div>
 						<div class="items-live__column">
-							<div class="items-live__item">
+							<article class="items-live__item">
 								<a href="#" class="items-live__image">
-									<img src="img/content/06.png" alt="">
+									<img src="@img/content/06.png" alt="Malto House">
 								</a>
 								<div class="items-live__body">
 									<a href="#" class="items-live__title">Malto House</a>
@@ -187,13 +189,14 @@
 										<div class="items-live__feature _icon-size">2</div>
 									</div>
 								</div>
-							</div>
+							</article>
 						</div>
 					</div>
 			</section>
+
 			<section class="hands-two">
 				<div class="hands-two__content">
-					<div class="hands-two__container _container">
+					<div class="hands-two__container">
 						<div class="hands-two__body">
 							<div class="hands-two__line line"></div>
 							<h2 class="hands-two__title title">You’re in good hands</h2>
@@ -208,12 +211,13 @@
 						</div>
 					</div>
 				</div>
-				<div data-da=".hands-two,767,first" class="hands-two__image _ibg">
-					<img src="img/content.png" alt="">
+				<div data-da=".hands-two,767.98,first" class="hands-two__image-ibg">
+					<img src="@img/content.png" alt="happy coustomers">
 				</div>
 			</section>
+
 			<section class="good">
-				<div class="good__container _container">
+				<div class="good__container">
 					<div class="good__body">
 						<div class="good__line line"></div>
 						<h2 class="good__title title title_w">You’re in good hands</h2>
@@ -228,8 +232,9 @@
 					</div>
 				</div>
 			</section>
+
 			<section class="feedback">
-				<div class="feedback__container _container">
+				<div class="feedback__container">
 					<div class="feedback__row">
 						<div class="feedback__column">
 							<div class="feedback__content">
@@ -242,7 +247,7 @@
 								</div>
 								<div class="feedback__item">
 									<div class="feedback__avatar">
-										<img src="img/avatar.png" alt="">
+										<img src="@img/avatar.png" alt="Lara Madrigal">
 									</div>
 									<div class="feedback__info">
 										<div class="feedback__name">Lara Madrigal</div>
@@ -262,7 +267,7 @@
 								</div>
 								<div class="feedback__item">
 									<div class="feedback__avatar">
-										<img src="img/avatar.png" alt="">
+										<img src="@img/avatar01.jpg" alt="Lara Madrigal">
 									</div>
 									<div class="feedback__info">
 										<div class="feedback__name">Lara Madrigal</div>
@@ -282,7 +287,7 @@
 								</div>
 								<div class="feedback__item">
 									<div class="feedback__avatar">
-										<img src="img/avatar.png" alt="">
+										<img src="@img/avatar02.jpg" alt="Lara Madrigal">
 									</div>
 									<div class="feedback__info">
 										<div class="feedback__name">Lara Madrigal</div>

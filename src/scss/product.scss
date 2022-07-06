@@ -1,589 +1,507 @@
 //========================================================================================================================================================
 
 .product-header {
-   background-color: #000;
-   &__top {
-      padding: 32px 0px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      @media (max-width: $md3+px) {
-         padding: 15px 0px;
-      }
-   }
+    background-color: $black;
+    &__top {
+        @include adaptiveValue("padding-top", 32, 15, 1070, 767.98, 1);
+        @include adaptiveValue("padding-bottom", 32, 15, 1070, 767.98, 1);
+        border-bottom: rem(1) solid rgba(255, 255, 255, 0.1);
+    }
 
-   &__container-top {
-   }
+    &__container-top {
+    }
 
-   &__bottom {
-      padding: 22px 0px;
-      @media (max-width: $md3+px) {
-         padding: 15px 0px;
-      }
-   }
+    &__bottom {
+        @include adaptiveValue("padding-top", 22, 15, 1070, 767.98, 1);
+        @include adaptiveValue("padding-bottom", 22, 15, 1070, 767.98, 1);
+    }
 
-   &__container-bottom {
-      display: flex;
-      justify-content: space-between;
-      @media (max-width: $md3+px) {
-         display: block;
-      }
-   }
+    &__container-bottom {
+        display: flex;
+        justify-content: space-between;
+        @media (max-width: $mobile) {
+            display: block;
+        }
+    }
 
-   &__info {
-      @media (max-width: $md3+px) {
-         text-align: center;
-         margin: 0px 0px 20px 0px;
-      }
-   }
+    &__info {
+        @media (max-width: $mobile) {
+            text-align: center;
+            margin-bottom: rem(20);
+        }
+    }
 
-   &__name {
-      font-weight: bold;
-      font-size: 32px;
-      line-height: 44 / 32 * 100%;
-      letter-spacing: -0.8px;
-      color: #ffffff;
-      margin: 0px 0px 4px 0px;
-   }
+    &__name {
+        font-weight: 700;
+        font-size: rem(32);
+        line-height: math.div(44, 32);
+        letter-spacing: rem(-0.8);
+        color: $white;
+        margin-bottom: rem(4);
+    }
 
-   &__addres {
-      font-size: 15px;
-      line-height: 24 / 15 * 100%;
-      letter-spacing: -0.4px;
-      color: #ffffff;
-      opacity: 0.6;
-   }
+    &__addres {
+        line-height: math.div(24, 15);
+        letter-spacing: rem(-0.4);
+        color: $white;
+        opacity: 0.6;
+    }
 
-   &__prices {
-      text-align: right;
-      @media (max-width: $md3+px) {
-         text-align: center;
-      }
-   }
+    &__prices {
+        text-align: right;
+        @media (max-width: $mobile) {
+            text-align: center;
+        }
+    }
 
-   &__price {
-      font-weight: bold;
-      font-size: 32px;
-      line-height: 44 / 32 * 100%;
-      letter-spacing: -0.8px;
-      color: #ffffff;
-      margin: 0px 0px 4px 0px;
-   }
+    &__price {
+        @extend .product-header__name;
+    }
 
-   &__square {
-      font-size: 15px;
-      line-height: 24 / 15 * 100%;
-      letter-spacing: -0.4px;
-      color: #ffffff;
-      opacity: 0.6;
-   }
+    &__square {
+        @extend .product-header__addres;
+    }
 }
 
 //========================================================================================================================================================
 
 .page {
-   &__content {
-      padding: 60px 0px 150px 0px;
-      background: #f2f2f2;
-      @media (max-width: $md2+px) {
-         padding: 40px 0px 100px 0px;
-      }
-      @media (max-width: $md3+px) {
-         padding: 40px 0px 80px 0px;
-      }
-      @media (max-width: $md4+px) {
-         padding: 30px 0px 60px 0px;
-      }
-   }
+    &__content {
+        @include adaptiveValue("padding-top", 60, 30, 170, 479.98, 1);
+        @include adaptiveValue("padding-left", 150, 60, 1070, 479.98, 1);
+        background-color: $gray_03;
+    }
 }
 .content-page {
-   &__container {
-      display: flex;
-      @media (max-width: $md2+px) {
-         display: block;
-      }
-   }
-   &__row {
-   }
+    &__container {
+        @media (min-width: $tablet) {
+            display: flex;
+        }
+    }
+    &__row {
+    }
 
-   &__body {
-      flex: 1 1 auto;
-      min-width: 0;
-   }
+    &__body {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
 
-   &__side {
-      flex: 0 0 336px;
-   }
+    &__side {
+        flex: 0 0 rem(336);
+    }
 
-   &__body {
-      padding: 0px 20px 110px 0px;
-      @media (max-width: $md2+px) {
-         padding: 0px 0px 80px 0px;
-      }
-   }
+    &__body {
+        padding-bottom: rem(80);
+        @media (min-width: $tablet) {
+            padding-bottom: rem(110);
+            padding-right: rem(20);
+        }
+    }
 
-   &__similar {
-   }
+    &__similar {
+    }
 }
 .side-content {
-   &__form {
-      box-shadow: 0px 32px 34px rgba(0, 0, 0, 0.133714);
-      border-radius: 25px;
-      background-color: #fff;
-      padding: 20px;
-   }
-   &__who {
-      display: flex;
-      align-items: center;
-      background-color: #f5f5f5;
-      padding: 15px;
-      border-radius: 10px;
-      margin: 0px 0px 20px 0px;
-   }
+    &__form {
+        box-shadow: 0px rem(32) rem(34) rgba(0, 0, 0, 0.14);
+        border-radius: rem(25);
+        background-color: $white;
+        padding: rem(20);
+    }
+    &__who {
+        display: flex;
+        align-items: center;
+        background-color: $gray_03;
+        padding: rem(15);
+        border-radius: rem(10);
+        margin-bottom: rem(20);
+    }
 
-   &__avatar {
-      flex: 0 0 40px;
-      height: 40px;
-      border-radius: 50%;
-      overflow: hidden;
-      img {
-         max-width: 100%;
-      }
-   }
+    &__avatar {
+        flex: 0 0 rem(40);
+        height: rem(40);
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+            max-width: 100%;
+        }
+    }
 
-   &__info {
-      margin: 0px 0px 0px 10px;
-   }
+    &__info {
+        margin-left: rem(10);
+    }
 
-   &__name {
-      line-height: 20 / 15 * 100%;
-      letter-spacing: -0.4px;
-      color: #000000;
-      margin: 0px 0px 2px 0px;
-   }
+    &__name {
+        line-height: math.div(20, 15);
+        letter-spacing: rem(-0.4);
+        color: $black;
+        &:not(:last-child) {
+            margin-bottom: rem(2);
+        }
+    }
 
-   &__view {
-      display: inline-block;
-      font-weight: bold;
-      font-size: 13px;
-      line-height: 17 / 13 * 100%;
-      letter-spacing: -0.3px;
-      color: #ffac12;
-      transition: all 0.3s ease 0s;
-      @media (min-width: $md2+px) {
-         &:hover {
-            color: #000;
-         }
-      }
-   }
+    &__view {
+        display: inline-block;
+        font-weight: 700;
+        font-size: rem(13);
+        line-height: math.div(17, 13);
+        letter-spacing: rem(-0.3);
+        color: $primary;
+        transition: color 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $black;
+            }
+        }
+    }
 
-   &__phone {
-   }
+    &__phone {
+    }
 
-   &__email {
-   }
+    &__email {
+    }
 
-   &__text {
-   }
+    &__text {
+    }
 
-   &__btn {
-      width: 100%;
-   }
+    &__btn {
+        width: 100%;
+    }
 }
 
 //========================================================================================================================================================
 
 .body-content {
-   &__mainslider {
-      margin: 0px 0px 20px 0px;
-      @media (max-width: $md4+px) {
-         margin: 0px 0px 10px 0px;
-      }
-   }
+    &__mainslider {
+        @include adaptiveValue("margin-bottom", 20, 10, 767.98, 479.98, 1);
+    }
 
-   &__details {
-      margin: 0px 0px 40px 0px;
-      @media (max-width: $md4+px) {
-         margin: 0px 0px 30px 0px;
-      }
-   }
-   &__description {
-      margin: 0px 0px 40px 0px;
-      @media (max-width: $md4+px) {
-         margin: 0px 0px 30px 0px;
-      }
-   }
+    &__details {
+        @include adaptiveValue("margin-bottom", 40, 30, 767.98, 479.98, 1);
+    }
 
-   &__features {
-      margin: 0px 0px 40px 0px;
-      @media (max-width: $md4+px) {
-         margin: 0px 0px 30px 0px;
-      }
-   }
+    &__description {
+        @include adaptiveValue("margin-bottom", 40, 30, 767.98, 479.98, 1);
+    }
+
+    &__features {
+        @include adaptiveValue("margin-bottom", 40, 30, 767.98, 479.98, 1);
+    }
 }
 //========================================================================================================================================================
 
 .details-body {
-   background-color: #fff;
-   box-shadow: 0px 32px 34px rgba(0, 0, 0, 0.133714);
-   border-radius: 25px;
-   &__top {
-      padding: 30px;
-      border-bottom: 1px solid #e4e4e4;
-      @media (max-width: $md3+px) {
-         padding: 20px;
-      }
-   }
+    background-color: $white;
+    box-shadow: 0px rem(32) rem(34) rgba(0, 0, 0, 0.133714);
+    border-radius: rem(25);
+    &__top {
+        @include adaptiveValue("padding", 30, 20, 1070, 767.98, 1);
+        border-bottom: rem(1) solid $gray_04;
+    }
 
-   &__title {
-   }
+    &__title {
+    }
 
-   &__bottom {
-      display: flex;
-      @media (max-width: $md4+px) {
-         flex-wrap: wrap;
-         justify-content: center;
-      }
-   }
+    &__bottom {
+        display: flex;
+        @media (max-width: $mobileSmall) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
 
-   &__column {
-      border-right: 1px solid #e4e4e4;
-      height: 60px;
-      flex: 0 1 20%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      @media (max-width: $md3+px) {
-         height: 50px;
-      }
-      &:last-child {
-         border: none;
-      }
-      @media (max-width: $md4+px) {
-         flex: 0 1 33.333%;
-         border-bottom: 1px solid #e4e4e4;
-         &:nth-child(4) {
-            border-bottom: 0;
-         }
-         &:nth-child(3) {
-            border-right: 0;
-         }
-      }
-   }
+    &__column {
+        border-right: rem(1) solid $gray_04;
+        height: rem(60);
+        flex: 0 1 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media (max-width: $mobile) {
+            height: rem(50);
+        }
+        &:last-child {
+            border: none;
+        }
+        @media (max-width: $mobileSmall) {
+            flex: 0 1 33.333%;
+            border-bottom: rem(1) solid $gray_04;
+            &:nth-child(4) {
+                border-bottom: 0;
+            }
+            &:nth-child(3) {
+                border-right: 0;
+            }
+        }
+    }
 
-   &__info {
-      display: flex;
-      align-items: center;
-      font-weight: 700;
-      font-size: 17px;
-      line-height: 22 / 17 * 100%;
-      letter-spacing: -0.4px;
-      color: #000000;
-      &::before {
-         font-size: 16px;
-         margin: 0px 10px 0px 0px;
-      }
-   }
+    &__info {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        font-size: rem(17);
+        line-height: math.div(22, 17);
+        letter-spacing: rem(-0.4);
+        color: $black;
+        &::before {
+            font-size: rem(16);
+            margin-right: rem(10);
+        }
+    }
 }
 //========================================================================================================================================================
 
 .mainslider {
-   cursor: grab;
-   &__slide {
-      padding: 0px 0px 72.83% 0px;
-      img {
-         border-radius: 0px 57px 0px 0px;
-         max-width: 100%;
-      }
-   }
+    cursor: grab;
+    &__slide {
+        padding-bottom: 72.83%;
+        img {
+            border-radius: 0px rem(57) 0px 0px;
+            max-width: 100%;
+        }
+    }
 }
 
 //========================================================================================================================================================
 
-.mainslider-dotts {
-}
 .swiper-pagination-bullets {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   margin: 0px 0px 40px 0px;
-   @media (max-width: $md4+px) {
-      margin: 0px 0px 30px 0px;
-   }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include adaptiveValue("margin-bottom", 40, 30, 767.98, 479.98, 1);
 }
 .swiper-pagination-bullet {
-   border-radius: 0px 16px 0px 0px;
-   transition: all 0.3s ease 0s;
-   border: 1px solid transparent;
-   cursor: pointer;
-   width: 80px;
-   height: 80px;
-   overflow: hidden;
-   background-size: cover;
-   background-repeat: no-repeat;
-   @media (min-width: $md2+px) {
-      &:hover {
-         border: 1px solid #ffac12;
-      }
-   }
-   @media (max-width: 670px) {
-      width: 65px;
-      height: 65px;
-   }
-   @media (max-width: 530px) {
-      width: 55px;
-      height: 55px;
-   }
-
-   @media (max-width: $md4+px) {
-      width: 50px;
-      height: 50px;
-   }
-   @media (max-width: 400px) {
-      width: 40px;
-      height: 40px;
-   }
+    border-radius: 0px rem(16) 0px 0px;
+    border: rem(1) solid transparent;
+    cursor: pointer;
+    @include adaptiveValue("width", 80, 40, 991.98, 530, 1);
+    @include adaptiveValue("height", 80, 40, 991.98, 530, 1);
+    overflow: hidden;
+    //  background-size: cover;
+    //  background-repeat: no-repeat;
+    transition: border 0.3s ease 0s;
+    @media (any-hover: hover) {
+        &:hover {
+            border: rem(1) solid $primary;
+        }
+    }
 }
 .swiper-pagination-bullet-active {
-   border: 1px solid #ffac12;
+    border: rem(1) solid $primary;
 }
 //========================================================================================================================================================
 
 .description-body {
-   background-color: #fff;
-   box-shadow: 0px 32px 34px rgba(0, 0, 0, 0.133714);
-   border-radius: 25px;
-   &__top {
-      padding: 30px;
-      border-bottom: 1px solid #e4e4e4;
-      @media (max-width: $md3+px) {
-         padding: 20px;
-      }
-   }
+    background-color: $white;
+    box-shadow: 0px rem(32) rem(34) rgba(0, 0, 0, 0.133714);
+    border-radius: rem(25);
+    &__top {
+        @include adaptiveValue("padding", 30, 20, 1070, 767.98, 1);
+        border-bottom: rem(1) solid $gray_04;
+    }
 
-   &__bottom {
-      padding: 30px;
-      @media (max-width: $md3+px) {
-         padding: 20px;
-      }
-      p {
-         font-size: 15px;
-         line-height: 22 / 15 * 100%;
-         letter-spacing: -0.4px;
-         color: #000000;
-         opacity: 0.6;
-         margin: 0px 0px 20px 0px;
-         &:last-child {
-            margin: 0px 0px 0px 0px;
-         }
-      }
-   }
+    &__bottom {
+        @include adaptiveValue("padding", 30, 20, 1070, 767.98, 1);
+        p {
+            line-height: math.div(22, 15);
+            letter-spacing: rem(-0.4);
+            color: $black;
+            opacity: 0.6;
+            &:not(:last-child) {
+                margin-bottom: rem(20);
+            }
+        }
+    }
 }
 //========================================================================================================================================================
 
 .features-body {
-   background-color: #fff;
-   box-shadow: 0px 32px 34px rgba(0, 0, 0, 0.133714);
-   border-radius: 25px;
-   &__top {
-      padding: 30px;
-      border-bottom: 1px solid #e4e4e4;
-      @media (max-width: $md3+px) {
-         padding: 20px;
-      }
-   }
+    @extend .description-body;
+    &__top {
+        @extend .description-body__top;
+    }
 
-   &__bottom {
-      display: flex;
-      padding: 30px;
-      justify-content: space-between;
-      margin: 0px -10px;
-      @media (max-width: $md3+px) {
-         padding: 20px;
-      }
-      @media (max-width: 630px) {
-         flex-wrap: wrap;
-         justify-content: center;
-      }
-   }
-
-   &__column {
-      padding: 0px 10px;
-      flex: 0 1 33.333%;
-      display: flex;
-      @media (max-width: 630px) {
-         margin: 0px 0px 20px 0px;
-         flex: 0 1 50%;
-         justify-content: center;
-         &:last-child {
-            margin: 0px 0px 0px 0px;
-         }
-      }
-      @media (max-width: $md4+px) {
-         flex: 1 1 100%;
-      }
-      @media (min-width: 631px) {
-         &:first-child {
-            justify-content: flex-start;
-         }
-         &:nth-child(2) {
+    &__bottom {
+        display: flex;
+        @include adaptiveValue("padding", 30, 20, 1070, 767.98, 1);
+        justify-content: space-between;
+        margin: 0px rem(-10);
+        @media (max-width: em(630)) {
+            flex-wrap: wrap;
             justify-content: center;
-         }
-         &:last-child {
-            justify-content: flex-end;
-         }
-      }
-   }
+        }
+    }
 
-   &__list {
-      li {
-         margin: 0px 0px 20px 0px;
-         &:last-child {
-            margin: 0px 0px 0px 0px;
-         }
-      }
-   }
+    &__column {
+        padding: 0px rem(10);
+        flex: 0 1 33.333%;
+        display: flex;
+        @media (max-width: em(630)) {
+            justify-content: center;
+            flex: 0 1 50%;
+            &:not(:last-child) {
+                margin-bottom: rem(20);
+            }
+        }
+        @media (max-width: $mobileSmall) {
+            flex: 1 1 100%;
+        }
+        @media (min-width: em(630)) {
+            &:first-child {
+                justify-content: flex-start;
+            }
+            &:nth-child(2) {
+                justify-content: center;
+            }
+            &:last-child {
+                justify-content: flex-end;
+            }
+        }
+    }
 
-   &__item {
-      font-size: 15px;
-      line-height: 22 / 15 * 100%;
-      letter-spacing: -0.4px;
-      color: #000000;
-      opacity: 0.6;
-      &::before {
-         display: inline-flex;
-         font-size: 16px;
-         margin: 0px 10px 0px 0px;
-      }
-   }
+    &__list {
+        li {
+            &:not(:last-child) {
+                margin-bottom: rem(20);
+            }
+        }
+    }
+
+    &__item {
+        line-height: math.div(22, 15);
+        letter-spacing: rem(-0.4);
+        color: $black;
+        opacity: 0.6;
+        &::before {
+            display: inline-flex;
+            font-size: rem(16);
+            margin-right: rem(10);
+        }
+    }
 }
 
 //========================================================================================================================================================
 
 .similar-content {
-   &__container {
-   }
+    &__container {
+    }
 
-   &__line {
-      margin: 0px 0px 17px 0px;
-      @media (max-width: $md2+px) {
-         margin: 0px 0px 10px 0px;
-      }
-   }
+    &__line {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 17, 10, 1070, 991.98, 1);
+        }
+    }
 
-   &__title {
-      margin: 0px 0px 60px 0px;
-      @media (max-width: $md2+px) {
-         margin: 0px 0px 40px 0px;
-      }
-      @media (max-width: $md3+px) {
-         margin: 0px 0px 20px 0px;
-      }
-   }
+    &__title {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 60, 20, 1070, 767.98, 1);
+        }
+    }
 
-   &__items {
-   }
+    &__items {
+    }
 }
+
 .items-similar {
-   overflow: visible;
-   display: flex;
-   margin: 0px -15px;
-   cursor: grab;
-   @media (max-width: 1200px) {
-      margin: 0px -10px;
-   }
-   .swiper-wrapper {
-   }
-   &__column {
-      flex: 0 0 33.333%;
-      padding: 0px 15px 30px 15px;
-      @media (max-width: 1200px) {
-         padding: 0px 10px 30px 10px;
-      }
-      @media (max-width: $md3+px) {
-         flex: 0 1 50%;
-      }
-      @media (max-width: $md4+px) {
-         flex: 1 1 100%;
-      }
-   }
+    overflow: visible;
+    display: flex;
+    margin: 0px rem(-15);
+    cursor: grab;
+    @media (max-width: em(1200)) {
+        margin: 0px rem(-10);
+    }
+    &__column {
+        flex: 0 0 33.333%;
+        padding: 0px rem(15) rem(30) rem(15);
+        @media (max-width: em(1200)) {
+            padding: 0px rem(10) rem(30) rem(10);
+        }
+        @media (max-width: $mobile) {
+            flex: 0 1 50%;
+        }
+        @media (max-width: $mobileSmall) {
+            flex: 1 1 100%;
+        }
+    }
 
-   &__item {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      box-shadow: 0px 32px 34px rgba(0, 0, 0, 0.02);
-      border-radius: 25px;
-      overflow: hidden;
-      transition: all 0.5s ease 0s;
-      background-color: #fff;
-      @media (min-width: $md2+px) {
-         &:hover {
-            background-color: #ffac12;
-            box-shadow: 0px 32px 34px rgba(0, 0, 0, 0.14);
-            .items-live__footer {
-               border-top: 1px solid #000;
+    &__item {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        box-shadow: 0px rem(32) rem(34) rgba(0, 0, 0, 0.02);
+        border-radius: rem(25);
+        overflow: hidden;
+        transition: all 0.5s ease 0s;
+        background-color: $white;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $primary;
+                box-shadow: 0px rem(32) rem(34) rgba(0, 0, 0, 0.14);
+                .items-live__footer {
+                    border-top: rem(1) solid $black;
+                }
+                .items-live__feature {
+                    border-right: rem(1) solid $black;
+                    &:last-child {
+                        border: none;
+                    }
+                }
             }
-            .items-live__feature {
-               border-right: 1px solid #000;
-               &:last-child {
-                  border: none;
-               }
-            }
-         }
-      }
-   }
+        }
+    }
 
-   &__image {
-      img {
-         max-width: 100%;
-      }
-   }
+    &__image {
+        img {
+            max-width: 100%;
+        }
+    }
 
-   &__body {
-      display: flex;
-      align-items: center;
-      min-height: 90px;
-      padding: 10px 30px;
-      flex: 1 1 auto;
-   }
+    &__body {
+        display: flex;
+        align-items: center;
+        min-height: rem(90);
+        padding: rem(10) rem(30);
+        flex: 1 1 auto;
+    }
 
-   &__title {
-      font-weight: 700;
-      font-size: 24px;
-      line-height: 31 / 24 * 100%;
-      letter-spacing: -0.6px;
-      color: #000000;
-   }
+    &__title {
+        font-weight: 700;
+        font-size: rem(24);
+        line-height: math.div(31, 24);
+        letter-spacing: rem(-0.6);
+        color: $black;
+    }
 
-   &__footer {
-      transition: all 0.5s ease 0s;
-      border-top: 1px solid #e4e4e4;
-   }
+    &__footer {
+        transition: border-top 0.5s ease 0s;
+        border-top: rem(1) solid $gray_04;
+    }
 
-   &__features {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-   }
+    &__features {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-   &__feature {
-      transition: all 0.5s ease 0s;
-      border-right: 1px solid #e4e4e4;
-      display: flex;
-      height: 60px;
-      justify-content: center;
-      align-items: center;
-      font-weight: 700;
-      font-size: 17px;
-      line-height: 22 / 17 * 100%;
-      letter-spacing: -0.4px;
-      color: #000000;
-      flex: 0 1 33.333%;
-      &::before {
-         font-size: 16px;
-         margin: 0px 10px 0px 0px;
-      }
-      &:last-child {
-         border: none;
-      }
-   }
+    &__feature {
+        transition: border-right 0.5s ease 0s;
+        border-right: rem(1) solid $gray_04;
+        display: flex;
+        height: rem(60);
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        font-size: rem(17);
+        line-height: math.div(22, 17);
+        letter-spacing: rem(-0.4);
+        color: $black;
+        flex: 0 1 33.333%;
+        &::before {
+            font-size: rem(16);
+            margin-right: rem(10);
+        }
+        &:last-child {
+            border: none;
+        }
+    }
 }
