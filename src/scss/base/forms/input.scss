@@ -20,14 +20,22 @@ textarea {
     color: $black;
     margin-bottom: rem(10);
 
-    &._focus {
+    &._form-focus {
         border: rem(1) solid $primary;
     }
-    &._error {
+    &._form-error {
         border: rem(1) solid red;
         color: red;
     }
 }
+
+.form__error {
+    font-size: rem(12);
+    line-height: math.div(14, 12);
+    color: red;
+    margin: rem(-5) rem(10) rem(10) rem(10);
+}
+
 textarea.input {
     height: rem(100);
     resize: none;
