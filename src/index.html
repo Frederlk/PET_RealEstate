@@ -1,138 +1,308 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Верстка «NEW_PROJECT_NAME»</title>
-    </head>
-    <body>
-        <div class="rootpage">
-            <h1>«NEW_PROJECT_NAME»</h1>
-            <div class="rootpage__info">Project Features</div>
-            <h2>Pages:</h2>
-            <ol class="rootpage__list">
-                <li><a target="_blank" href="home.html">Home Page</a></li>
-                <li><a target="_blank" href="product.html">Product Page</a></li>
-            </ol>
-            <div class="rootpage__contacts">
-                <h2>My contacts:</h2>
-                <p>Email: <a href="mailto:pertrinichshadow@gmail.com">pertrinichshadow@gmail.com</a></p>
-                <p>Phone: <a href="tel:375256474526">+375256474526</a></p>
-                <p>Social network: <a href="">Link to social network</a></p>
-            </div>
-        </div>
-    </body>
-    <style>
-        @charset "UTF-8";
-        @import url("https://fonts.googleapis.com/css?family=Montserrat:regular,700&display=swap");
-        *,
-        *::before,
-        *::after {
-            padding: 0px;
-            margin: 0px;
-            border: 0px;
-            box-sizing: border-box;
-        }
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            min-width: 320px;
-            width: 100%;
-            color: #fff;
-            background-color: #5e5373;
-        }
-        body {
-            font-family: Montserrat;
-            font-size: 100%;
-            line-height: 1;
-            font-size: 1rem;
-        }
-        a {
-            text-decoration: underline;
-            color: #ebe691;
-        }
-        a:visited {
-            text-decoration: underline;
-            color: #aaa768;
-        }
-        a:hover {
-            text-decoration: none;
-        }
-        ul li {
-            list-style: none;
-        }
-        img {
-            vertical-align: top;
-        }
-        .wrapper {
-            width: 100%;
-            min-height: 100%;
-            overflow: hidden;
-        }
-        .rootpage {
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        @media (max-width: 767px) {
-            .rootpage {
-                padding: 30px 15px;
-            }
-        }
-        h1 {
-            color: #ebe691;
-            font-size: 2.5rem;
-            margin: 0px 0px 1.25rem 0px;
-        }
-        @media (max-width: 767px) {
-            h1 {
-                font-size: 1.85rem;
-                margin: 0px 0px 1.25rem 0px;
-            }
-        }
-        h2 {
-            color: #ebe691;
-            font-size: 1.25rem;
-            margin: 0px 0px 1rem 0px;
-        }
-        @media (max-width: 767px) {
-            h2 {
-                font-size: 1.125rem;
-                margin: 0px 0px 1rem 0px;
-            }
-        }
-        .rootpage__info {
-            line-height: 140%;
-            margin: 0px 0px 1.5rem 0px;
-        }
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Real Estate"
+})
 
-        .rootpage__list {
-            margin: 0px 0px 2.25rem 1.25rem;
-        }
-        .rootpage__list li:not(:last-child) {
-            margin: 0px 0px 15px 0px;
-        }
-        .rootpage__contacts,
-        .rootpage__tnx {
-            border-radius: 200px;
-            padding: 20px 65px;
-            line-height: 140%;
-        }
-        @media (max-width: 767px) {
-            .rootpage__contacts,
-            .rootpage__tnx {
-                border-radius: 40px;
-                padding: 20px;
-            }
-        }
-        .rootpage__contacts {
-            background: #32b5a4;
-        }
-        .rootpage__contacts a {
-            color: #ebe691;
-        }
-    </style>
+<body>
+	<div class="wrapper">
+		<main class="page">
+			<section class="fullscreen">
+				<div class="fullscreen__container">
+					<div class="fullscreen__body">
+						@@include('html/_header.htm',{})
+						<div class="fullscreen__text">
+							<h1 class="fullscreen__title">Beautiful homes made for you</h1>
+							<p class="fullscreen__subtitle">In oculis quidem se esse admonere interesse enim maxime placeat,
+								facere
+								possimus, omnis. Et quidem faciunt, ut labore et accurate disserendum et harum quidem exercitus
+								quid.
+							</p>
+						</div>
+						<div class="fullscreen__bottom">
+							<a href="/product.html" class="fullscreen__link _icon-path">See all listings</a>
+						</div>
+					</div>
+				</div>
+				<div class="fullscreen__bg-ibg">
+					<img src="@img/bg.png" alt="background">
+				</div>
+			</section>
+
+			<section class="hands">
+				<div class="hands__content">
+					<div class="hands__container">
+						<div class="hands__body">
+							<div class="hands__line line"></div>
+							<h2 class="hands__title title">You’re in good hands</h2>
+							<p class="hands__text text">Torquatos nostros? quos dolores eos, qui dolorem ipsum per se texit,
+								ne
+								ferae quidem se repellere, idque instituit docere sic: omne animal, simul atque integre
+								iudicante
+								itaque aiunt hanc quasi involuta aperiri, altera occulta quaedam et voluptatem accusantium
+								doloremque.</p>
+							<a href="/product.html" class="hands__btn btn btn_black _icon-path">Learn more</a>
+						</div>
+					</div>
+				</div>
+				<div data-da=".hands,767.98,first" class="hands__image-ibg">
+					<img src="@img/content.png" alt="happy coustomers">
+				</div>
+			</section>
+
+			<section class="live">
+				<div class="live__container">
+					<div class="live__line line"></div>
+					<h2 class="live__title title">Find your next place to live</h2>
+					<div class="live__filter filter-live">
+						<div class="filter-live__column">
+							<div class="filter-live__category _icon-arrow-down">Looking for</div>
+							<div class="filter-live__sub">
+								<a href="/product.html" class="filter-live__sub-list">Price: Low to High</a>
+								<a href="/product.html" class="filter-live__sub-list">Price: High to Low</a>
+								<a href="/product.html" class="filter-live__sub-list">Newest Arrivals</a>
+							</div>
+						</div>
+						<div class="filter-live__column">
+							<div class="filter-live__category _icon-arrow-down">Location</div>
+							<div class="filter-live__sub">
+								<a href="/product.html" class="filter-live__sub-list">Price: Low to High</a>
+								<a href="/product.html" class="filter-live__sub-list">Price: High to Low</a>
+								<a href="/product.html" class="filter-live__sub-list">Newest Arrivals</a>
+							</div>
+						</div>
+						<div class="filter-live__column">
+							<div class="filter-live__category _icon-arrow-down">Property type</div>
+							<div class="filter-live__sub">
+								<a href="/product.html" class="filter-live__sub-list">Price: Low to High</a>
+								<a href="/product.html" class="filter-live__sub-list">Price: High to Low</a>
+								<a href="/product.html" class="filter-live__sub-list">Newest Arrivals</a>
+							</div>
+						</div>
+						<div class="filter-live__column">
+							<div class="filter-live__category _icon-arrow-down">Price</div>
+							<div class="filter-live__sub">
+								<a href="/product.html" class="filter-live__sub-list">Price: Low to High</a>
+								<a href="/product.html" class="filter-live__sub-list">Price: High to Low</a>
+								<a href="/product.html" class="filter-live__sub-list">Newest Arrivals</a>
+							</div>
+						</div>
+					</div>
+					<div class="live__items items-live">
+						<div class="items-live__column">
+							<article class="items-live__item">
+								<a href="/product.html" class="items-live__image">
+									<img src="@img/content/01.png" alt="Malto House">
+								</a>
+								<div class="items-live__body">
+									<a href="/product.html" class="items-live__title">Malto House</a>
+								</div>
+								<div class="items-live__footer">
+									<div class="items-live__features">
+										<div class="items-live__feature _icon-bed">4</div>
+										<div class="items-live__feature _icon-shower">2</div>
+										<div class="items-live__feature _icon-size">2</div>
+									</div>
+								</div>
+							</article>
+						</div>
+						<div class="items-live__column">
+							<article class="items-live__item">
+								<a href="/product.html" class="items-live__image">
+									<img src="@img/content/02.png" alt="Malto House">
+								</a>
+								<div class="items-live__body">
+									<a href="/product.html" class="items-live__title">Malto House</a>
+								</div>
+								<div class="items-live__footer">
+									<div class="items-live__features">
+										<div class="items-live__feature _icon-bed">4</div>
+										<div class="items-live__feature _icon-shower">2</div>
+										<div class="items-live__feature _icon-size">2</div>
+									</div>
+								</div>
+							</article>
+						</div>
+						<div class="items-live__column">
+							<article class="items-live__item">
+								<a href="/product.html" class="items-live__image">
+									<img src="@img/content/03.png" alt="Malto House">
+								</a>
+								<div class="items-live__body">
+									<a href="/product.html" class="items-live__title">Malto House</a>
+								</div>
+								<div class="items-live__footer">
+									<div class="items-live__features">
+										<div class="items-live__feature _icon-bed">4</div>
+										<div class="items-live__feature _icon-shower">2</div>
+										<div class="items-live__feature _icon-size">2</div>
+									</div>
+								</div>
+							</article>
+						</div>
+						<div class="items-live__column">
+							<article class="items-live__item">
+								<a href="/product.html" class="items-live__image">
+									<img src="@img/content/04.png" alt="Malto House">
+								</a>
+								<div class="items-live__body">
+									<a href="/product.html" class="items-live__title">Malto House</a>
+								</div>
+								<div class="items-live__footer">
+									<div class="items-live__features">
+										<div class="items-live__feature _icon-bed">4</div>
+										<div class="items-live__feature _icon-shower">2</div>
+										<div class="items-live__feature _icon-size">2</div>
+									</div>
+								</div>
+							</article>
+						</div>
+						<div class="items-live__column">
+							<article class="items-live__item">
+								<a href="/product.html" class="items-live__image">
+									<img src="@img/content/05.png" alt="Malto House">
+								</a>
+								<div class="items-live__body">
+									<a href="/product.html" class="items-live__title">Malto House</a>
+								</div>
+								<div class="items-live__footer">
+									<div class="items-live__features">
+										<div class="items-live__feature _icon-bed">4</div>
+										<div class="items-live__feature _icon-shower">2</div>
+										<div class="items-live__feature _icon-size">2</div>
+									</div>
+								</div>
+							</article>
+						</div>
+						<div class="items-live__column">
+							<article class="items-live__item">
+								<a href="/product.html" class="items-live__image">
+									<img src="@img/content/06.png" alt="Malto House">
+								</a>
+								<div class="items-live__body">
+									<a href="/product.html" class="items-live__title">Malto House</a>
+								</div>
+								<div class="items-live__footer">
+									<div class="items-live__features">
+										<div class="items-live__feature _icon-bed">4</div>
+										<div class="items-live__feature _icon-shower">2</div>
+										<div class="items-live__feature _icon-size">2</div>
+									</div>
+								</div>
+							</article>
+						</div>
+					</div>
+			</section>
+
+			<section class="hands-two">
+				<div class="hands-two__content">
+					<div class="hands-two__container">
+						<div class="hands-two__body">
+							<div class="hands-two__line line"></div>
+							<h2 class="hands-two__title title">You’re in good hands</h2>
+							<p class="hands-two__text text">Torquatos nostros? quos dolores eos, qui dolorem ipsum per se
+								texit,
+								ne
+								ferae quidem se repellere, idque instituit docere sic: omne animal, simul atque integre
+								iudicante
+								itaque aiunt hanc quasi involuta aperiri, altera occulta quaedam et voluptatem accusantium
+								doloremque.</p>
+							<a href="/product.html" class="hands-two__btn btn btn_black _icon-path">Learn more</a>
+						</div>
+					</div>
+				</div>
+				<div data-da=".hands-two,767.98,first" class="hands-two__image-ibg">
+					<img src="@img/content.png" alt="happy coustomers">
+				</div>
+			</section>
+
+			<section class="good">
+				<div class="good__container">
+					<div class="good__body">
+						<div class="good__line line"></div>
+						<h2 class="good__title title title_w">You’re in good hands</h2>
+						<p class="good__text text text_w">Torquatos nostros? quos dolores eos, qui dolorem ipsum per se
+							texit,
+							ne
+							ferae quidem se repellere, idque instituit docere sic: omne animal, simul atque integre
+							iudicante
+							itaque aiunt hanc quasi involuta aperiri, altera occulta quaedam et voluptatem accusantium
+							doloremque.</p>
+						<a href="/product.html" class="good__btn btn btn_yellow _icon-path">Learn more</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="feedback">
+				<div class="feedback__container">
+					<div class="feedback__row">
+						<div class="feedback__column">
+							<div class="feedback__content">
+								<div class="feedback__body">
+									<div class="feedback__line line"></div>
+									<p class="feedback__text">“Certe, inquam, pertinax non existimant oportere exquisitis
+										rationibus conquisitis de quo enim ipsam. Torquem detraxit hosti et quidem faciunt, ut
+										aut.”
+									</p>
+								</div>
+								<div class="feedback__item">
+									<div class="feedback__avatar">
+										<img src="@img/avatar.png" alt="Lara Madrigal">
+									</div>
+									<div class="feedback__info">
+										<div class="feedback__name">Lara Madrigal</div>
+										<div class="feedback__job">Client</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="feedback__column">
+							<div class="feedback__content">
+								<div class="feedback__body">
+									<div class="feedback__line line"></div>
+									<p class="feedback__text">“Certe, inquam, pertinax non existimant oportere exquisitis
+										rationibus conquisitis de quo enim ipsam. Torquem detraxit hosti et quidem faciunt, ut
+										aut.”
+									</p>
+								</div>
+								<div class="feedback__item">
+									<div class="feedback__avatar">
+										<img src="@img/avatar01.jpg" alt="Lara Madrigal">
+									</div>
+									<div class="feedback__info">
+										<div class="feedback__name">Lara Madrigal</div>
+										<div class="feedback__job">Client</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="feedback__column">
+							<div class="feedback__content">
+								<div class="feedback__body">
+									<div class="feedback__line line"></div>
+									<p class="feedback__text">“Certe, inquam, pertinax non existimant oportere exquisitis
+										rationibus conquisitis de quo enim ipsam. Torquem detraxit hosti et quidem faciunt, ut
+										aut.”
+									</p>
+								</div>
+								<div class="feedback__item">
+									<div class="feedback__avatar">
+										<img src="@img/avatar02.jpg" alt="Lara Madrigal">
+									</div>
+									<div class="feedback__info">
+										<div class="feedback__name">Lara Madrigal</div>
+										<div class="feedback__job">Client</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
 </html>
