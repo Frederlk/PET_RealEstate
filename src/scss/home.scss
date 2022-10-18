@@ -1,7 +1,6 @@
 .fullscreen {
     padding-top: rem(30);
     flex: 1 1 auto;
-    min-height: 100vh;
     position: relative;
     display: flex;
     @include adaptiveValue("margin-bottom", 150, 80, 1070, 991.98, 1);
@@ -90,7 +89,11 @@
             height: 100%;
             top: 0;
             left: 0;
-            background: linear-gradient(198.73deg, rgba(0, 0, 0, 0.0001) 15.31%, rgba(0, 0, 0, 0.837986) 67.37%);
+            background: linear-gradient(
+                198.73deg,
+                rgba(0, 0, 0, 0.0001) 15.31%,
+                rgba(0, 0, 0, 0.837986) 67.37%
+            );
         }
     }
 }
